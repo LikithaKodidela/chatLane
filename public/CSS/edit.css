@@ -1,0 +1,107 @@
+body {
+    font-family: system-ui, sans-serif;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    margin: 0;
+}
+
+.box {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e3e3e3;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+.meta {
+    margin: 6px 0;
+    color: #444;
+    font-size: 14px;
+}
+
+.date {
+    font-size: 12px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.edited {
+    color: #2d7a2d;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    resize: vertical;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #6aa6ff;
+}
+
+.btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background: #4a8bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2c6df2;
+}
+
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #666;
+}
+
+.back:hover {
+    text-decoration: underline;
+}
+
+/* --- NEW CSS FOR new.ejs ONLY --- */
+.new-chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* spacing between inputs and textarea */
+    margin-top: 15px;
+}
+
+.new-chat-form input,
+.new-chat-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.new-chat-form input:focus,
+.new-chat-form textarea:focus {
+    border-color: #6aa6ff;
+    box-shadow: 0 0 6px rgba(106, 166, 255, 0.4);
+}

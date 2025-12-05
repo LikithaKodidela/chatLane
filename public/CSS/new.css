@@ -1,0 +1,86 @@
+body {
+    font-family: system-ui, sans-serif;
+    background: #fafafa;
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    margin: 0;
+}
+
+.box {
+    width: 350px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #e3e3e3;
+}
+
+h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+/* Form styling */
+.chat-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* spacing between inputs/textarea */
+    margin-top: 15px;
+}
+
+.chat-form input,
+.chat-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    outline: none;
+    box-sizing: border-box;
+    transition: all 0.2s ease;
+}
+
+.chat-form input:focus,
+.chat-form textarea:focus {
+    border-color: #6aa6ff;
+    box-shadow: 0 0 6px rgba(106, 166, 255, 0.4);
+}
+
+.chat-form textarea {
+    resize: vertical;
+}
+
+/* Buttons */
+.btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 10px;
+    background: #4a8bff;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn:hover {
+    background: #2c6df2;
+}
+
+/* Back link */
+.back {
+    display: block;
+    text-align: center;
+    margin-top: 12px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #666;
+    transition: color 0.2s ease;
+}
+
+.back:hover {
+    text-decoration: underline;
+    color: #333;
+}

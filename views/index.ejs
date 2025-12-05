@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini whatsapp</title>
+    <link rel="stylesheet" href="/CSS/style.css"/>
+</head>
+<body>
+
+    <h3>All Chats</h3>
+
+    <form method="GET" action="/chats/new">
+        <button class="btn">New Chat</button>
+    </form>
+
+    <br/>
+
+    <% for (let chat of chats) { %>
+        <div class="chat">
+
+            <p><b>From:</b> <i><%= chat.from %></i></p>
+
+            <div class="msg">
+                <p>
+                    <%= chat.msg %>
+                    <% if (chat.updated_at) { %>
+                        <span style="font-size:12px; margin-left:4px; color:#d4f3d4;">
+                            (edited)
+                        </span>
+                    <% } %>
+                </p>
+            </div>
+
+            <div class="buttons">
+                <form method="GET" action="/chats/<%= chat._id %>/edit" style="display:inline;">
+                    <button class="btn">Edit</button>
+                </form>
+
+                <form method="POST" action="/chats/<%= chat._id %>?_method=DELETE" style="display:inline;" class="delete-form">
+                    <button class="btn delete-btn">Delete</button>
+                </form>
+            </div>
+
+            <p><b>To:</b> <i><%= chat.to %></i></p>
+
+            <div class="time-box">
+                <% if (chat.updated_at) { %>
+                    Updated:
+                    <%= chat.updated_at.toString().split(" ")[4] %> —
+                    <%= chat.updated_at.toString().split(" ").slice(0,4).join("-") %>
+                <% } else { %>
+                    Created:
+                    <%= chat.created_at.toString().split(" ")[4] %> —
+                    <%= chat.created_at.toString().split(" ").slice(0,4).join("-") %>
+                <% } %>
+            </div>
+
+        </div>
+    <% } %>
+     <script src="/JS/main.js"></script>
+</body>
+</html>

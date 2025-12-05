@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Chat</title>
+    <link rel="stylesheet" href="/CSS/edit.css">
+</head>
+<body>
+    <div class="box">
+        <h3>Edit Message</h3>
+
+        <p class="meta">
+            <b><%= chat.from %></b> → <b><%= chat.to %></b>
+        </p>
+
+        <% if (chat.updated_at) { %>
+            <p class="date edited">Edited: <%= chat.updated_at.toLocaleString() %></p>
+        <% } else { %>
+            <p class="date">Created: <%= chat.created_at.toLocaleString() %></p>
+        <% } %>
+
+        <form method="POST" action="/chats/<%= chat._id %>?_method=PUT">
+            <textarea name="msg" rows="5"><%= chat.msg %></textarea>
+
+            <button class="btn">Save</button>
+        </form>
+
+        <a href="/chats" class="back">← Back</a>
+    </div>
+</body>
+</html>
